@@ -19,6 +19,11 @@ def main():
         gray_frame = processor.to_gray(frame)
         blurred_frame = processor.apply_blur(gray_frame)
         motion_mask = motion_detector.detect(blurred_frame)
+        motion_mask = motion_detector.refine_mask(motion_mask)
+
+
+
+
 
         cv2.imshow("Original", frame)
         cv2.imshow("Escala de Cinza", gray_frame)
